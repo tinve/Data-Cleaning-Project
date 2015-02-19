@@ -86,5 +86,9 @@ result <- summarise_each(raw, funs(mean))
 
 ## writes to file, clears workspace
 write.table(result, "UCI HAR Dataset/tidy_data.txt", row.names = FALSE)
+<<<<<<< HEAD
 
 rm(raw, result, activities, all_values, selected_values)
+=======
+rm(raw, result, activities, all_values, selected_values)
+>>>>>>> f690740c734722f964ee3ba4a58159daec74360a
