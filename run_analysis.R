@@ -85,5 +85,5 @@ raw <- group_by(raw, subject, activity)
 result <- summarise_each(raw, funs(mean))
 
 ## writes to file, clears workspace
-write.table(result, "tidy_data.txt", row.names = FALSE)
+write.table(result, "UCI HAR Dataset/tidy_data.txt", row.names = FALSE)
 rm(raw, result, activities, all_values, selected_values)
