@@ -5,6 +5,6 @@ Download **getdata-projectfiles-UCI HAR Dataset.zip** file with data from the ac
 
 Run the script. It will group measurements by subject (1 to 30) and activity (walking, walking_upstairs, walking_downstairs, sitting, standing and lying), pick values with "mean()" and "std()" in their names and calculate
 average for each group. Then it will write the result to a file **tidy_data.txt** in **UCI HAR Dataset directory**.
-Read Codebook file for the details of output file format.
+Read CodeBook file for the details of output file format.
 
 Read script comments to learn how to modify the script to include more values (with "Mean" in their names).
