@@ -8,14 +8,46 @@ DITEN - Università degli Studi di Genova.
 Via Opera Pia 11A, I-16145, Genoa, Italy.
 activityrecognition@smartlab.ws
 www.smartlab.ws
-Data file can be downloaded from [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
+Raw data can be downloaded from [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 ==================================================================
 
 Data acquisition:
 ==================================================================
-The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (walking, walking_uostairs, walking_downstairs, sitting, standing, lying) wearing a smartphone (Samsung Galaxy S II) on the waist. Its embedded accelerometer and gyroscope captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. 
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (walking, walking_upstairs, walking_downstairs, sitting, standing, lying) wearing a smartphone (Samsung Galaxy S II) on the waist. Its embedded accelerometer and gyroscope captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. 
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain.
+
+All accelerations were recorded in g units.
+==================================================================
+
+Data cleaning:
+==================================================================
+All mean() and std() measurements were grouped by subject and activity and averaged by script **run_analysis.R**, producing tidy_data.txt file.
+==================================================================
+
+The dataset includes the following files:
+==================================================================
+- README.md - instruction on running data cleaning script
+- run_analysis.R - R script for cleaning data
+- tidy_data.txt - output file of the script
+- CodeBook.md - this file
+==================================================================
+
+Tidy data format:
+==================================================================
+First column contains the subject ID (number from 1 to 30).
+
+Second column contains one of six activity types:
+- walking
+- walking_upstairs
+- walking_downstairs
+- sitting
+- standing
+- lying
+
+There are 180 rows produced by all possible combinations of subject and activity
+
+Columns from 2 to 68 contain mean() and std() measurements of 33 acceleration signals, averaged for each subject-activity combination. These signals are (XYZ is a shorthand notation for three distict signals): 
 
 tBodyAcc-XYZ
 tGravityAcc-XYZ
@@ -35,36 +67,8 @@ fBodyAccJerkMag
 fBodyGyroMag
 fBodyGyroJerkMag
 
-The set of variables that were estimated from these signals are: 
-
-mean(): Mean value
-std(): Standard deviation
-and other variables
-
-Additional vectors were obtained by averaging the signals in a signal window sample:
-
-gravityMean
-tBodyAccMean
-tBodyAccJerkMean
-tBodyGyroMean
-tBodyGyroJerkMean
+All accelerations are in g units and all angular velocities are in radian/second units.
 ==================================================================
-
-Data cleaning:
-==================================================================
-All mean() and std() measurements were grouped by subject and activity and averaged by script **run_analysis.R**, producing tidy_data.txt file.
-==================================================================
-
-The dataset includes the following files:
-=========================================
-- README.md - instruction on running data cleaning script
-- Run_analysis.R - R script for cleaning data
-- 
-- CodeBook.md - this file
-
-
-
-
 
 License:
 ==================================================================
