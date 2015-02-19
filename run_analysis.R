@@ -56,7 +56,7 @@ names(raw) <- c("subject", "activity", all_values)
 # selected_values <- grep("subject|activity|[Mm]ean|std" , names(raw))
 
 ## select first two columns and columns with mean() or std()
-selected_values <- grep("subject|activity|mean()|std()" , names(raw))
+selected_values <- grep("subject|activity|mean\\(\\)|std\\(\\)" , names(raw))
 
 ## keep subject, activity and mean/std columns
 raw <- raw[, selected_values]
@@ -86,9 +86,5 @@ result <- summarise_each(raw, funs(mean))
 
 ## writes to file, clears workspace
 write.table(result, "UCI HAR Dataset/tidy_data.txt", row.names = FALSE)
-<<<<<<< HEAD
 
 rm(raw, result, activities, all_values, selected_values)
-=======
-rm(raw, result, activities, all_values, selected_values)
->>>>>>> f690740c734722f964ee3ba4a58159daec74360a
